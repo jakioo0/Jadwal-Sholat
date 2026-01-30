@@ -151,6 +151,65 @@
             padding: 10px 0; position: absolute; bottom: 0; width: 100%;
         }
         marquee { color: var(--accent-gold); font-size: 1.2rem; font-weight: 500; }
+        /* =========================================
+           TAMBAHAN: MODEM MOBILE / HP (Layar < 768px)
+           Tempel di paling bawah tag <style>
+           ========================================= */
+        @media screen and (max-width: 768px) {
+            /* Izinkan scroll di HP */
+            body, html {
+                overflow-y: auto !important; 
+                height: auto !important;
+                min-height: 100vh;
+            }
+
+            .wrapper {
+                padding: 15px; /* Padding lebih kecil */
+                height: auto;
+                padding-bottom: 60px; /* Ruang untuk running text */
+                display: block; /* Matikan flexbox full height */
+            }
+
+            /* Header Tumpuk Tengah */
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .mosque-info h1 { font-size: 1.6rem; } /* Font judul lebih kecil */
+            .date-box { text-align: center; margin-top: 15px; width: 100%; }
+            .date-box h2 { font-size: 1.3rem; }
+
+            /* Konten Utama Tumpuk ke Bawah */
+            .main-content {
+                display: block; /* Hapus grid 2 kolom */
+                margin-bottom: 20px;
+            }
+
+            .clock-container { margin-bottom: 20px; }
+            #jam-besar { font-size: 4.5rem; } /* Jam tidak terlalu besar */
+            #timer-kecil { font-size: 2.5rem; }
+
+            /* Hadits */
+            .hadits-container { padding: 25px; margin-bottom: 20px; }
+            #hadits-content { font-size: 1.2rem; }
+
+            /* Jadwal Sholat: Grid 3 Kolom (2 Baris) */
+            .schedule-grid {
+                grid-template-columns: repeat(3, 1fr) !important; 
+                gap: 10px;
+                margin-bottom: 60px; /* Jarak agar tidak tertutup running text */
+            }
+
+            .prayer-card { padding: 10px 5px; }
+            .prayer-card h3 { font-size: 0.8rem; }
+            .prayer-card p { font-size: 1.4rem; }
+            
+            /* Overlay saat waktu habis */
+            #overlay h1 { font-size: 2rem; }
+            #overlay-timer { font-size: 5rem; }
+        }
     </style>
 </head>
 <body>
